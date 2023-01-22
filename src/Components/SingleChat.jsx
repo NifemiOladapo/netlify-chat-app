@@ -28,11 +28,10 @@ const socket =io.connect('http://localhost:3001')
 
 
     useEffect(()=>{   
-        const fechmessages=async()=>{
             if(!selectedChat)return
             try {
                 setLoading(true)
-                await fetch(`http://localhost:3001/api/getmessages/${selectedChat._id}`)
+                fetch(`http://localhost:3001/api/getmessages/${selectedChat._id}`)
                 .then(res=> res.json())
                 .then(data=> {
                     setLoading(false)
@@ -49,9 +48,8 @@ const socket =io.connect('http://localhost:3001')
                     status : "error"
                 })
             }
-        }
         selectedChatCompare=selectedChat;
-    },[selectedChat])
+    },[selectedChat, toast])
 
     useEffect(()=>{
         socket.emit("setup", user)
