@@ -1,4 +1,4 @@
-import { Box, Button, Tooltip, Text, Menu, MenuButton, StatDownArrow, Avatar, MenuList, MenuItem, MenuDivider, Drawer, useDisclosure, DrawerOverlay, DrawerHeader, DrawerContent, DrawerBody, Input, Toast, useToast, Spinner } from '@chakra-ui/react'
+import { Box, Button, Tooltip, Text, Menu, MenuButton, StatDownArrow, Avatar, MenuList, MenuItem, MenuDivider, Drawer, useDisclosure, DrawerOverlay, DrawerHeader, DrawerContent, DrawerBody, Input, useToast, Spinner } from '@chakra-ui/react'
 import {Search, Notifications} from '@material-ui/icons'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
@@ -14,7 +14,7 @@ const SideDrawer = ({getChats}) => {
   const {isOpen, onOpen, onClose}=useDisclosure()
 
   //to get the user state
-  const {user, selectedChat, setSelectedChat, chats, setChats, notification, setNotification} =ChatState();
+  const {user, setSelectedChat, chats, setChats, notification, setNotification} =ChatState();
   const navigate=useNavigate()
   const toast =useToast()
 

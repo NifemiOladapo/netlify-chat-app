@@ -51,7 +51,7 @@ const socket =io.connect('http://localhost:3001')
     useEffect(()=>{
         fechmessages()
         selectedChatCompare=selectedChat;
-    },[selectedChat])
+    },[selectedChat, fechmessages])
 
     useEffect(()=>{
         socket.emit("setup", user)
@@ -65,7 +65,7 @@ const socket =io.connect('http://localhost:3001')
         socket.on("stop typing", ()=>{
             setIsTyping(false)
         })
-    },[])
+    },[user])
 
     useEffect(()=>{
         socket.on("receive message", (mess)=>{
@@ -83,7 +83,7 @@ const socket =io.connect('http://localhost:3001')
                 setMessages([...messages])
             }
         })
-    },[messages])
+    },[messages, notification, setNotification])
 
     const sendmessage= async(event)=>{
         if(event.key === "Enter" && messageText){

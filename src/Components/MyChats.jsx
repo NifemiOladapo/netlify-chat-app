@@ -1,17 +1,13 @@
 import { Box, Button, Stack, Text, useToast } from '@chakra-ui/react';
 import { Add } from '@material-ui/icons';
 import { useEffect } from 'react';
-import { useState } from 'react';
 import { ChatState } from '../ChatProvider';
 import ChatLoading from './ChatLoading';
 import GroupChatModel from './GroupChatModel';
 
 const MyChats = ({getChats}) => {
 
-
-  const toast=useToast()
-
-  const {user, selectedChat, setSelectedChat, chats, setChats} =ChatState();
+  const {user, selectedChat, setSelectedChat, chats} =ChatState();
 
     // const getChats= async()=>{
     //   await fetch("http://localhost:3001/api/fetchchats", {
@@ -34,7 +30,7 @@ const MyChats = ({getChats}) => {
 
   useEffect(()=>{
     getChats()
-  },[])
+  },[getChats])
 
   return(
     <Box display={{base : selectedChat ? "none" : "flex", md : "flex"}} flexDir='column' alignItems={'center'} bg='white' padding={'3px'} w={{base : "100%", md : '31%'}} borderRadius='lg' borderWidth={'1px'}>

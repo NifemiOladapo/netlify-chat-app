@@ -1,7 +1,6 @@
 import { Box, Button, FormControl, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Spinner, useDisclosure, useToast } from '@chakra-ui/react'
 import React, { useState } from 'react'
-import { useEffect } from 'react';
-import ChatProvider, { ChatState } from '../ChatProvider';
+import { ChatState } from '../ChatProvider';
 import FoundUsers from './FoundUsers';
 import UserBadge from './UserBadge';
 
@@ -9,13 +8,12 @@ const UpdateGroupChatModel = ({children}) => {
 
     const {isOpen, onOpen, onClose}=useDisclosure();
     const [groupName, setGroupName]=useState('')
-    const [selectedUsers, setSelectedUsers]=useState([])
     const [search, setSearch]=useState('')
     const [searchResults, setSearchResults]=useState([])
     const [loading, setloading]=useState(false)
     const [renameLoading, setRenameLoading]=useState(false)
 
-  const {user, chats, setChats, selectedChat, setSelectedChat} =ChatState();
+  const {user, setChats, selectedChat, setSelectedChat} =ChatState();
 
   const toast =useToast()
 

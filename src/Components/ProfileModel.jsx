@@ -1,5 +1,5 @@
 import { Button, IconButton, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, useDisclosure, Text, Image } from '@chakra-ui/react'
-import { ViewAgenda, ViewCarousel } from '@material-ui/icons'
+import { ViewCarousel } from '@material-ui/icons'
 import React from 'react'
 
 const ProfileModel = ({user, children}) => {
