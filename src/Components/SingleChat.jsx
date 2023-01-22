@@ -25,7 +25,10 @@ const socket =io.connect('http://localhost:3001')
 
     const {user, selectedChat, setSelectedChat, notification, setNotification}=ChatState()
 
-    const fechmessages=async()=>{
+
+
+    useEffect(()=>{   
+        const fechmessages=async()=>{
             if(!selectedChat)return
             try {
                 setLoading(true)
@@ -46,10 +49,7 @@ const socket =io.connect('http://localhost:3001')
                     status : "error"
                 })
             }
-    }
-
-    useEffect(()=>{
-        fechmessages()
+        }
         selectedChatCompare=selectedChat;
     },[selectedChat])
 
