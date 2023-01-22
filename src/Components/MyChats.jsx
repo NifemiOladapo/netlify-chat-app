@@ -1,4 +1,4 @@
-import { Box, Button, Stack, Text, useToast } from '@chakra-ui/react';
+import { Box, Button, Stack, Text } from '@chakra-ui/react';
 import { Add } from '@material-ui/icons';
 import { useEffect } from 'react';
 import { ChatState } from '../ChatProvider';

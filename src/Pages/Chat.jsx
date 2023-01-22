@@ -1,4 +1,3 @@
-import { useEffect, useState} from 'react'
 import { ChatState } from '../ChatProvider'
 import {Box, useToast} from '@chakra-ui/react'
 import SideDrawer from '../Components/SideDrawer';

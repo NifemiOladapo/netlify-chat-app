@@ -51,7 +51,7 @@ const socket =io.connect('http://localhost:3001')
     useEffect(()=>{
         fechmessages()
         selectedChatCompare=selectedChat;
-    },[selectedChat, fechmessages])
+    },[selectedChat])
 
     useEffect(()=>{
         socket.emit("setup", user)
