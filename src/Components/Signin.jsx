@@ -100,7 +100,7 @@ const Signin = () => {
         try {
 
             setLoading(true)
-            await fetch("http://localhost:3001/api/register",{
+            await fetch("https://chatapp-backend-7gqt.onrender.com/api/register",{
                 method : 'POST',
                 headers : {'Content-Type' : 'application/json'},
                 body : JSON.stringify({
