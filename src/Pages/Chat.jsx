@@ -12,7 +12,7 @@ const Chat = () => {
   const {user, setChats} =ChatState();
 
   const getChats= async()=>{
-    await fetch("http://localhost:3001/api/fetchchats", {
+    await fetch("https://chatapp-backend-7gqt.onrender.com/api/fetchchats", {
       headers : {"Authorization" : `Bearer ${user.token}`}
     })
     .then(res=> res.json())
