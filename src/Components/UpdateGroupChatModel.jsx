@@ -22,7 +22,7 @@ const UpdateGroupChatModel = ({children}) => {
 
         setloading(true)
 
-        await fetch(`http://localhost:3001/api/searchusers?search=${search}`, {
+        await fetch(`https://chatapp-backend-7gqt.onrender.com/api/searchusers?search=${search}`, {
             headers : {
                 "Authorization" : `Bearer ${user.token}`,
             }
@@ -39,7 +39,7 @@ const UpdateGroupChatModel = ({children}) => {
     const leaveGroup= async ()=>{
 
         try {
-            await fetch("http://localhost:3001/api/removefromgroup", {
+            await fetch("https://chatapp-backend-7gqt.onrender.com/api/removefromgroup", {
                 headers : {
                     "Content-Type" : "application/json"
                 },
@@ -52,7 +52,7 @@ const UpdateGroupChatModel = ({children}) => {
             .then(res=> res.json())
             .then(async(data)=>{
                 onClose()
-                await fetch("http://localhost:3001/api/fetchchats", {
+                await fetch("https://chatapp-backend-7gqt.onrender.com/api/fetchchats", {
                     headers : {"Authorization" : `Bearer ${user.token}`}
                   })
                   .then(res=> res.json())
@@ -102,7 +102,7 @@ const UpdateGroupChatModel = ({children}) => {
         }
 
         try {
-            await fetch("http://localhost:3001/api/addtogroup", {
+            await fetch("https://chatapp-backend-7gqt.onrender.com/api/addtogroup", {
                 headers : {"Content-Type" : "application/json"},
                 method : "PUT",
                 body : JSON.stringify({
@@ -147,7 +147,7 @@ const UpdateGroupChatModel = ({children}) => {
         }
 
         try {
-            await fetch("http://localhost:3001/api/removefromgroup", {
+            await fetch("https://chatapp-backend-7gqt.onrender.com/api/removefromgroup", {
                 headers : {"Content-Type" : "application/json"},
                 method : "PUT",
                 body : JSON.stringify({
@@ -193,7 +193,7 @@ const UpdateGroupChatModel = ({children}) => {
 
         try{
             setRenameLoading(true)
-            await fetch("http://localhost:3001/api/renamegroup", {
+            await fetch("https://chatapp-backend-7gqt.onrender.com/api/renamegroup", {
                 method : "PUT",
                 headers : {
                     "Content-Type" : "application/json",

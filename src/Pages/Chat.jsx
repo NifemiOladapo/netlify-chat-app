@@ -33,7 +33,9 @@ const Chat = () => {
 
   return (
     <div style={{width : '100%'}}>
-     {user ?  <SideDrawer getChats={getChats}/> : null} 
+     {user ? (
+     <SideDrawer getChats={getChats} />
+     ) : null} 
      <Box display='flex' justifyContent='space-between' w='100%' h="91vh" padding={'10px'}>
       {user ? <MyChats getChats={getChats}/> : null} 
       {user ? <ChatBox/> : null}

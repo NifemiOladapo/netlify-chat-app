@@ -44,7 +44,7 @@ const SideDrawer = ({getChats}) => {
 
     try{
       setLoading(true)
-      await fetch(`http://localhost:3001/api/searchusers?search=${search}`, {
+      await fetch(`https://chatapp-backend-7gqt.onrender.com/api/searchusers?search=${search}`, {
         headers : {'Authorization' : `Bearer ${user.token}`}
       })
       .then(res=> res.json())
@@ -71,7 +71,7 @@ const SideDrawer = ({getChats}) => {
 
       console.log(user)
 
-      await fetch("http://localhost:3001/api/accesschat", {
+      await fetch("https://chatapp-backend-7gqt.onrender.com/api/accesschat", {
         method : 'POST',
         headers : {
           "Authorization" : `Bearer ${user.token}`,

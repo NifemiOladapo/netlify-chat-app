@@ -21,7 +21,7 @@ const GroupChatModel = ({children}) => {
 
         setloading(true)
 
-        await fetch(`http://localhost:3001/api/searchusers?search=${search}`, {
+        await fetch(`https://chatapp-backend-7gqt.onrender.com/api/searchusers?search=${search}`, {
             headers : {
                 "Authorization" : `Bearer ${user.token}`,
             }
@@ -48,7 +48,7 @@ const GroupChatModel = ({children}) => {
             }) 
         }
         try {
-            await fetch("http://localhost:3001/api/creategroup", {
+            await fetch("https://chatapp-backend-7gqt.onrender.com/api/creategroup", {
                 headers : {
                     "Authorization" : `Bearer ${user.token}`,
                     "Content-Type" : "application/json"

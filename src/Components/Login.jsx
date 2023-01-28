@@ -32,7 +32,7 @@ const Login = () => {
 
         try {
             setIsloading(true)
-            await fetch("http://localhost:3001/api/login", {
+            await fetch("https://chatapp-backend-7gqt.onrender.com/api/login", {
                 method : 'POST',
                 headers : {'Content-Type' : 'application/json'},
                 body : JSON.stringify({

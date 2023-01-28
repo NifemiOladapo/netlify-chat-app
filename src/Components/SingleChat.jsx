@@ -10,7 +10,7 @@ import ScrollableChat from './ScrollableChat'
 
 let selectedChatCompare;
 
-const socket =io.connect('http://localhost:3001')
+const socket =io.connect('https://chatapp-backend-7gqt.onrender.com')
 
 
  const SingleChat = () => {
@@ -31,7 +31,7 @@ const socket =io.connect('http://localhost:3001')
             if(!selectedChat)return
             try {
                 setLoading(true)
-                fetch(`http://localhost:3001/api/getmessages/${selectedChat._id}`)
+                fetch(`https://chatapp-backend-7gqt.onrender.com/api/getmessages/${selectedChat._id}`)
                 .then(res=> res.json())
                 .then(data=> {
                     setLoading(false)
@@ -87,7 +87,7 @@ const socket =io.connect('http://localhost:3001')
         if(event.key === "Enter" && messageText){
             try {
                 setMessageText("")
-                await fetch("http://localhost:3001/api/sendmessage", {
+                await fetch("https://chatapp-backend-7gqt.onrender.com/api/sendmessage", {
                     method : "POST",
                     headers : {
                         "Content-type" : "application/json",
