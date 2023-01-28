@@ -111,8 +111,15 @@ const UpdateGroupChatModel = ({children}) => {
                 })
             })
             .then(res=> res.json())
-            .then(data=>{
+            .then(async(data)=>{
                 setSelectedChat(data)
+                await fetch("https://chatapp-backend-7gqt.onrender.com/api/fetchchats", {
+                    headers : {"Authorization" : `Bearer ${user.token}`}
+                  })
+                  .then(res=> res.json())
+                  .then(data=> {
+                    setChats(data)
+                  })
             })
 
         } catch (error) {
