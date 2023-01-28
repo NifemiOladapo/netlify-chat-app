@@ -1,13 +1,15 @@
-import { Box, Button, Stack, Text } from '@chakra-ui/react';
+import { Box, Button, Stack, Text, useToast } from '@chakra-ui/react';
 import { Add } from '@material-ui/icons';
 import { useEffect } from 'react';
 import { ChatState } from '../ChatProvider';
 import ChatLoading from './ChatLoading';
 import GroupChatModel from './GroupChatModel';
 
-const MyChats = ({getChats}) => {
+const MyChats = ({}) => {
 
-  const {user, selectedChat, setSelectedChat, chats} =ChatState();
+  const {user, selectedChat, setSelectedChat, chats, setChats} =ChatState();
+
+  const toast =useToast()
 
     // const getChats= async()=>{
     //   await fetch("http://localhost:3001/api/fetchchats", {
@@ -29,7 +31,22 @@ const MyChats = ({getChats}) => {
     // }
 
   useEffect(()=>{
-    getChats()
+       fetch("https://chatapp-backend-7gqt.onrender.com/api/fetchchats", {
+        headers : {"Authorization" : `Bearer ${user.token}`}
+      })
+      .then(res=> res.json())
+      .then(data=> {
+        setChats(data)
+      })
+      .catch(err=>{
+        toast({
+          title : err,
+          position : "top",
+          isClosable : true,
+          status : "error",
+          duration : 5000
+        })  
+      })
   },[])
 
   return(
