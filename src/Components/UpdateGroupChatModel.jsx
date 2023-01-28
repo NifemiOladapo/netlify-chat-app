@@ -46,7 +46,7 @@ const UpdateGroupChatModel = ({children}) => {
                 method : 'PUT',
                 body : JSON.stringify({
                     chatId : selectedChat._id,
-                    userId : user._id
+                    userId : user.id
                 })
             })
             .then(res=> res.json())
