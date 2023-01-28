@@ -30,7 +30,7 @@ const MyChats = ({getChats}) => {
 
   useEffect(()=>{
     getChats()
-  },[])
+  },[getChats])
 
   return(
     <Box display={{base : selectedChat ? "none" : "flex", md : "flex"}} flexDir='column' alignItems={'center'} bg='white' padding={'3px'} w={{base : "100%", md : '31%'}} borderRadius='lg' borderWidth={'1px'}>

@@ -37,7 +37,7 @@ const Chat = () => {
      <SideDrawer getChats={getChats} />
      ) : null} 
      <Box display='flex' justifyContent='space-between' w='100%' h="91vh" padding={'10px'}>
-      {user ? <MyChats getChats={getChats}/> : null} 
+      {user ? <MyChats getChats={getChats}/> : null}
       {user ? <ChatBox/> : null}
      </Box>
     </div>
