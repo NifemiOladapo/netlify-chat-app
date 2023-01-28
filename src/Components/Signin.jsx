@@ -112,7 +112,7 @@ const Signin = () => {
             })
             .then(res=> res.json())
             .then(data=>{
-                setLoading(true)
+                setLoading(false)
                 if(data === "Please change your username. Username taken" || data === "User not created"){
                     toast({
                         title : data,
