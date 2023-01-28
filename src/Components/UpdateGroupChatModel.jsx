@@ -207,6 +207,7 @@ const UpdateGroupChatModel = ({children}) => {
             .then(res=> res.json())
             .then(data=>{ 
                 console.log(data)
+                onClose()
                 setRenameLoading(false)
                 setGroupName("")
                 setSelectedChat(data)
