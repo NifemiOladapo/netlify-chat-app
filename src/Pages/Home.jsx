@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <Container maxw='xxl' centerContent>
       <Box p={'2'} d='flex' justifyContent='center' m='40px 0 15px 0' bg='white' w={'100%'} borderRadius='lg' borderWidth={'1px'}>
-        <Text fontSize={'3xl'} color='black' textAlign={'center'} fontFamily={'sans-serif'}>Talk-A-Tive</Text>
+        <Text fontSize={'3xl'} color='black' textAlign={'center'} fontFamily={'sans-serif'}>Nix-Chat</Text>
       </Box>
       <Box bg={'white'} w='100%' p={4} borderRadius='lg' borderWidth={'1px'}>
         <Tabs variant={'soft-rounded'}>

@@ -105,7 +105,7 @@ const SideDrawer = ({getChats}) => {
             <Text display={{base : "none", md : "flex"}} padding='4px'>Search Users</Text>
           </Button>
         </Tooltip>
-        <Text fontSize={'2xl'} fontFamily={"Work sans"}>Social Larva</Text>
+        <Text fontSize={'2xl'} fontFamily={"Work sans"}>Nix-Chat</Text>
         <Box display={'flex'} alignItems={'center'}>
           <Menu>
             <MenuButton padding={"1px"}>
