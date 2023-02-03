@@ -69,8 +69,6 @@ const SideDrawer = ({getChats}) => {
     try{
       setLoadingChat(true)
 
-      console.log(user)
-
       await fetch("https://chatapp-backend-7gqt.onrender.com/api/accesschat", {
         method : 'POST',
         headers : {
@@ -84,11 +82,29 @@ const SideDrawer = ({getChats}) => {
         console.log(data)
         setLoadingChat(false)
         onClose()
-        setSelectedChat(null)
-        if(!chats.find(c=> c._id === data._id)){
-          chats.push(data)
-          setChats([...chats])
+        if(data === 'this users has an existing chat'){
+          toast({
+            title : "This user has an existing chat with you",
+            status : 'warning',
+            position : 'top',
+            duration : 4000,
+            isClosable : true
+          })
+          return
         }
+
+        chats.push(data)
+        setChats([...chats])
+
+      //   const found =chats.some(chat=>{
+      //     return chat._id === data._id
+      //   })
+      //   if(found){
+      //     setSelectedChat(data)
+      //     return
+      // }
+      //     chats.push(data)
+      //     setChats([...chats])
       })
 
     }catch(err){
